@@ -1,6 +1,6 @@
 DROP TABLE Invoice;
 DROP TABLE Account;
-DROP TABLE Has;
+DROP TABLE OrderedProduct;
 DROP TABLE Greenhouse;
 DROP TABLE Grow;
 DROP TABLE warehouse;
@@ -9,28 +9,6 @@ DROP TABLE Employee;
 DROP TABLE Product;
 DROP TABLE CactiSpecies;
 DROP TABLE WorksAt;
-
-
-
-
-CREATE TABLE Invoice (
-orderId  VARCHAR(50),
-totalAmount  DECIMAL(9,2) CHECK (totalAmount>=0),
-weight  FLOAT(9, 3) CHECK (weight>=0),
-orderDate  DATE NOT NULL,
-paymentType  VARCHAR(50),
-shipDate  DATE NOT NULL,
-shipType  VARCHAR(50) NOT NULL,
-expectedDelivery  DATE,
-accountUsername  VARCHAR(50) NOT NULL,
-whouseName  VARCHAR(20) NOT NULL,
-PRIMARY KEY (orderId),
-FOREIGN KEY (accountUsername) REFERENCES Account (username)
-    ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY (whouseName) REFERENCES Warehouse (whouseName)
-    ON DELETE CASCADE ON UPDATE CASCADE );
- 
-
 
 CREATE TABLE Account (
 username  VARCHAR(50),
@@ -44,8 +22,39 @@ email  VARCHAR(75) NOT NULL,
 phone  VARCHAR(10),
 PRIMARY KEY(username));
 
+CREATE TABLE Warehouse (
+     whouseName  VARCHAR(20),
+     whouseLocation  VARCHAR(80) NOT NULL,
+     PRIMARY KEY (whouseName));
 
-CREATE TABLE Has (
+CREATE TABLE Invoice (
+orderId  VARCHAR(50),
+totalAmount  DECIMAL(9,2) CHECK (totalAmount>=0),
+weight  DECIMAL(9, 3) CHECK (weight>=0),
+orderDate  DATE NOT NULL,
+paymentType  VARCHAR(50),
+shipDate  DATE NOT NULL,
+shipType  VARCHAR(50) NOT NULL,
+expectedDelivery  DATE,
+accountUsername  VARCHAR(50) NOT NULL,
+whouseName  VARCHAR(20) NOT NULL,
+PRIMARY KEY (orderId),
+FOREIGN KEY (accountUsername) REFERENCES Account (username)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (whouseName) REFERENCES Warehouse (whouseName)
+    ON DELETE CASCADE ON UPDATE CASCADE );
+    
+    
+CREATE TABLE Product (
+productId  VARCHAR(50),
+weight  DECIMAL(5,2) NOT NULL,
+productName  VARCHAR(50) NOT NULL,
+price  DECIMAL (9,2) NOT NULL,
+Inventory  INTEGER,
+PRIMARY KEY (productId));
+
+
+CREATE TABLE OrderedProduct (
 productId    VARCHAR(50),
 orderId  VARCHAR(50),
 quantity  INTEGER CHECK (quantity >= 0),
@@ -65,7 +74,16 @@ PRIMARY KEY (ghouseId),
 FOREIGN KEY (whouseName) REFERENCES Warehouse (whouseName)
     ON DELETE NO ACTION ON UPDATE CASCADE);
 
-
+CREATE TABLE CactiSpecies (
+productId  VARCHAR(50),
+species  VARCHAR(50),
+food  VARCHAR(50) NOT NULL,
+sunLevel  INTEGER CHECK (sunLevel BETWEEN 1 and 10),
+waterLevel  INTEGER CHECK (waterLevel BETWEEN 1 and 10),
+PRIMARY KEY (species, productId),
+FOREIGN KEY (productId) REFERENCES Product (productId)
+    ON DELETE NO ACTION ON UPDATE CASCADE);
+    
 
 CREATE TABLE Grow (
 ghouseId  VARCHAR(50),
@@ -80,12 +98,6 @@ FOREIGN KEY (species) REFERENCES CactiSpecies (species)
     ON DELETE NO ACTION ON UPDATE CASCADE);
 
 
-CREATE TABLE Warehouse (
-     whouseName  VARCHAR(20),
-     whouseLocation  VARCHAR(80) NOT NULL,
-     PRIMARY KEY (whouseName));
-
-
 CREATE TABLE Rating(
 accountUser  VARCHAR(50),
 productId  VARCHAR(50), 
@@ -96,7 +108,6 @@ FOREIGN KEY(productId) REFERENCES Product(productId)
     ON DELETE NO ACTION ON UPDATE CASCADE,
 FOREIGN KEY(accountUser) REFERENCES Account(username)
     ON DELETE NO ACTION ON UPDATE CASCADE);
-
 
 
 CREATE TABLE Employee (
@@ -110,27 +121,6 @@ FOREIGN KEY (whouseName) REFERENCES Warehouse(whouseName)
     ON DELETE SET NULL ON UPDATE CASCADE,
 FOREIGN KEY (empSuperId) REFERENCES Employee(empId)
     ON DELETE SET NULL ON UPDATE CASCADE);
-
-
-
-CREATE TABLE Product (
-productId  VARCHAR(50),
-weight  DECIMAL(5,2) NOT NULL,
-productName  VARCHAR(50) NOT NULL,
-price  DECIMAL (9,2) NOT NULL,
-Inventory  INTEGER,
-PRIMARY KEY (productId));
-
-
-CREATE TABLE CactiSpecies (
-productId  VARCHAR(50),
-species  VARCHAR(50),
-food  VARCHAR(50) NOT NULL,
-sunLevel  INTEGER CHECK (sunLevel BETWEEN 1 and 10),
-waterLevel  INTEGER CHECK (waterLevel BETWEEN 1 and 10),
-PRIMARY KEY (species, productId),
-FOREIGN KEY (productId) REFERENCES Product (productId)
-    ON DELETE NO ACTION ON UPDATE CASCADE);
     
     
 CREATE TABLE WorksAt (
