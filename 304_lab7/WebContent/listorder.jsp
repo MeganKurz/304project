@@ -46,7 +46,7 @@
 		String pw = "39265137";
 		try {
 			con = DriverManager.getConnection(url, uid, pw);
-			String SQL = "select orderId, c.customerId, cname, totalAmount from Orders o, Customer c where o.customerId=c.customerId";
+			String SQL = "SELECT orderId, accountUsername, fullName, totalAmount FROM Invoice i, Account a WHERE i.accountUsername=a.username";
 			PreparedStatement pstmt = con.prepareStatement(SQL);
 			ResultSet rst = pstmt.executeQuery();
 			out.println(
@@ -58,7 +58,7 @@
 						+ rst.getString(3) + "</td><td>" + rst.getString(4) + "</td></tr>");
 				out.println(
 						"<tr align='right'><td colspan='4'><table id = 'hor-minimalist-b'><th><b>Product Id</b></th><th><b>Quantity</b></th><th><b>Price</b></th>");
-				String SQL2 = "select productId, quantity, price from OrderedProduct where orderId=?";
+				String SQL2 = "SELECT productId, quantity, price FROM OrderedProduct as o, Product as p WHERE o.productId=p.productId AND orderId=?";
 				PreparedStatement pstmt2 = con.prepareStatement(SQL2);
 				pstmt2.setString(1, oid);
 				ResultSet rst2 = pstmt2.executeQuery();

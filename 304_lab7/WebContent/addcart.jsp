@@ -34,4 +34,4 @@
 
 	session.setAttribute("productList", productList);
 %>
-<jsp:forward page="showcart.jsp?delete=null" />
+<jsp:forward page="showcart.jsp?" />

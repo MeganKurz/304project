@@ -63,7 +63,7 @@
 				out.println("<h2><font face = 'Sans-Serif'>Products containing '" + name + "'</font></h2>");
 				out.println(
 						"<table id = 'hor-minimalist-b'><tbody><tr><td></td><td><h3>Product Name</h3></td><td><h3>Price</h3></td></tr>");
-				String SQL = "select productName, price, productId from Product where productName like ? Order by productName";
+				String SQL = "SELECT productName, price, productId FROM Product WHERE productName LIKE ? AND Inventory > 0 ORDER BY productName";
 				PreparedStatement pstmt = con.prepareStatement(SQL);
 				pstmt.setString(1, "%" + name + "%");
 				ResultSet rst = pstmt.executeQuery();
@@ -77,7 +77,7 @@
 				out.println("<h2><font face = 'Sans-Serif'>All Products</font></h2>");
 				out.println(
 						"<table id = 'hor-minimalist-b'><tbody><th></th><th><b>Product Name</b></th><th><b>Price</b></th>");
-				String SQL = "select productName, price, productId from Product Order by productName";
+				String SQL = "SELECT productName, price, productId FROM Product WHERE Inventory > 0 ORDER BY productName";
 				PreparedStatement pstmt = con.prepareStatement(SQL);
 				ResultSet rst = pstmt.executeQuery();
 				while (rst.next()) {
