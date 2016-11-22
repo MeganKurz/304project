@@ -70,6 +70,7 @@
 								ps.executeUpdate();
 								pu.setInt(1, qty);
 								pu.setString(2, productId);
+								pu.executeUpdate();
 								total += qty * pr;
 								out.println("<tr><td>" + productId + "</td><td>" + product.get(1) + "</td><td>"
 										+ qty + "</td><td>" + pr + "</td><td>" + qty * pr + "</td></tr>");
