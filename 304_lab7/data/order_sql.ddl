@@ -92,9 +92,7 @@ species  VARCHAR(50),
 PRIMARY KEY (ghouseId, productId, species),
 FOREIGN KEY (ghouseId) REFERENCES Greenhouse (ghouseId)
     ON DELETE NO ACTION ON UPDATE CASCADE,
-FOREIGN KEY (productId) REFERENCES Product (productId)
-    ON DELETE NO ACTION ON UPDATE CASCADE,
-FOREIGN KEY (species) REFERENCES CactiSpecies (species)
+FOREIGN KEY (species, productId) REFERENCES CactiSpecies (species, productId)
     ON DELETE NO ACTION ON UPDATE CASCADE);
 
 
@@ -120,7 +118,7 @@ PRIMARY KEY(empId),
 FOREIGN KEY (whouseName) REFERENCES Warehouse(whouseName)
     ON DELETE SET NULL ON UPDATE CASCADE,
 FOREIGN KEY (empSuperId) REFERENCES Employee(empId)
-    ON DELETE SET NULL ON UPDATE CASCADE);
+    ON DELETE NO ACTION ON UPDATE NO ACTION);
     
     
 CREATE TABLE WorksAt (
