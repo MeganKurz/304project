@@ -7,7 +7,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Log in</title>
 </head>
-<body>
+
+<body class="HolyGrail">
+    <header class="HolyGrail-header">
+		<nav>
+			<img src="img/fclogo.png">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Products</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+    </header>
 	<h1 align="center">Sign up for an account with Fancy Cacti!</h1>
 
  <main>
@@ -30,4 +42,33 @@
     </form>
   </div>
 	  </main>
+
+	   <footer class="HolyGrail-footer">
+		<div class="footer">
+			<div class="leftfooter">
+					<h3>About</h3>
+					<p> FancyCacti is the best cactus store ever. We are the best, bar nonerino caterino!</p>
+				
+			</div>
+		
+			<div class="centerfooter">
+				<h3>Contact</h3>
+				<a href="mailto:contact@fancycacti.com" class="flink">contact@fancycacti.com</a><br>
+				<a href="tel:+12505550100" class="flink">(250) 555-0100</a>
+			</div>
+		
+			<div class="rightfooter">
+				<h3>Site Map</h3>
+				<a href="index.html">Home</a><br>
+				<a href="products.html">Products</a><br>
+				<a href="services.html">Services</a><br>
+				<a href="contact.html">Contact</a>
+			</div>	
+		</div>
+		<div class="copyinfo">
+					<p>MLM Roofing &copy; 2016. <a id="jw" href="legal.html">Legal Information.</a> All rights reserved. <br> Website design by <a id="jw" href="http://www.jaredhw.com">Jaredhw</a></p>
+		</div>
+    </footer>
+
+	  </body>
 </html>
