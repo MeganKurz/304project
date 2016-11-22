@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kyla Reid and Megan Kurz Grocery CheckOut Line</title>
+<title>Fancy Cacti CheckOut Line</title>
 </head>
 <body>
 
