@@ -55,9 +55,12 @@
 				pstmt.setString(1, "%" + name + "%");
 				ResultSet rst = pstmt.executeQuery();
 				while (rst.next()) {
-					out.println("<tr><td><a href=\"addcart.jsp?id=" + rst.getString(3) + "&name=" + rst.getString(1)
-							+ "&price=" + rst.getString(2) + "\">Add to cart</a>" + "</td><td>" + rst.getString(1)
-							+ "</td><td>" + rst.getString(2) + "</td></tr>");
+					out.println("<tr><td><a href=\"addcart.jsp?id="
+							+ rst.getString(3) + "&name="
+							+ rst.getString(1) + "&price="
+							+ rst.getString(2) + "\">Add to cart</a>"
+							+ "</td><td>" + rst.getString(1) + "</td><td>"
+							+ rst.getString(2) + "</td></tr>");
 				}
 				out.println("</table>");
 			} else {
@@ -67,9 +70,12 @@
 				PreparedStatement pstmt = con.prepareStatement(SQL);
 				ResultSet rst = pstmt.executeQuery();
 				while (rst.next()) {
-					out.println("<tr><td><a href=\"addcart.jsp?id=" + rst.getInt(3) + "&name=" + rst.getString(1)
-							+ "&price=" + rst.getString(2) + " \">Add to cart</a>" + "</td><td>" + rst.getString(1)
-							+ "</td><td>" + rst.getString(2) + "</td></tr>");
+					out.println("<tr><td><a href=\"addcart.jsp?id="
+							+ rst.getInt(3) + "&name=" + rst.getString(1)
+							+ "&price=" + rst.getString(2)
+							+ " \">Add to cart</a>" + "</td><td>"
+							+ rst.getString(1) + "</td><td>"
+							+ rst.getString(2) + "</td></tr>");
 				}
 				out.println("</table>");
 			}
