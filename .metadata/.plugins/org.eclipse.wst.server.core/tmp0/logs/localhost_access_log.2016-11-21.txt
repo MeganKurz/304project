@@ -1,0 +1,8 @@
+127.0.0.1 - - [21/Nov/2016:17:27:59 -0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:00 -0800] "GET /304_lab7/shop.html HTTP/1.1" 200 350
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:10 -0800] "GET /304_lab7/listprod.jsp HTTP/1.1" 200 11168
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:13 -0800] "GET /304_lab7/addcart.jsp?id=17&name=Alice%20Mutton&price=39.00 HTTP/1.1" 200 1003
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:15 -0800] "GET /304_lab7/listprod.jsp HTTP/1.1" 200 11168
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:17 -0800] "GET /304_lab7/addcart.jsp?id=18&name=Carnarvon%20Tigers&price=62.50 HTTP/1.1" 200 1350
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:18 -0800] "GET /304_lab7/checkout.jsp HTTP/1.1" 200 418
+0:0:0:0:0:0:0:1 - - [21/Nov/2016:17:28:25 -0800] "GET /304_lab7/order.jsp?customerId=1&password=password1 HTTP/1.1" 200 667

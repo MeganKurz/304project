@@ -16,25 +16,6 @@
 			value="Reset"> (Leave blank for all products)
 	</form>
 
-	<%
-		// Get product name to search for
-
-		// Variable name now contains the search string the user entered
-		// Use it to build a query and print out the resultset.  Make sure to use PreparedStatement!
-
-		// Make the connection
-
-		// Print out the ResultSet
-
-		// For each product create a link of the form
-		// addcart.jsp?id=<productId>&name=<productName>&price=<productPrice>
-
-		// Close connection
-
-		// Useful code for formatting currency values:
-		// NumberFormat currFormat = NumberFormat.getCurrencyInstance();
-		// out.println(currFormat.format(5.0);	// Prints $5.00
-	%>
 	<%@ page import="java.sql.*"%>
 	<%
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -55,12 +36,9 @@
 				pstmt.setString(1, "%" + name + "%");
 				ResultSet rst = pstmt.executeQuery();
 				while (rst.next()) {
-					out.println("<tr><td><a href=\"addcart.jsp?id="
-							+ rst.getString(3) + "&name="
-							+ rst.getString(1) + "&price="
-							+ rst.getString(2) + "\">Add to cart</a>"
-							+ "</td><td>" + rst.getString(1) + "</td><td>"
-							+ rst.getString(2) + "</td></tr>");
+					out.println("<tr><td><a href=\"addcart.jsp?id=" + rst.getString(3) + "&name=" + rst.getString(1)
+							+ "&price=" + rst.getString(2) + "\">Add to cart</a>" + "</td><td>" + rst.getString(1)
+							+ "</td><td>" + rst.getString(2) + "</td></tr>");
 				}
 				out.println("</table>");
 			} else {
@@ -70,12 +48,9 @@
 				PreparedStatement pstmt = con.prepareStatement(SQL);
 				ResultSet rst = pstmt.executeQuery();
 				while (rst.next()) {
-					out.println("<tr><td><a href=\"addcart.jsp?id="
-							+ rst.getInt(3) + "&name=" + rst.getString(1)
-							+ "&price=" + rst.getString(2)
-							+ " \">Add to cart</a>" + "</td><td>"
-							+ rst.getString(1) + "</td><td>"
-							+ rst.getString(2) + "</td></tr>");
+					out.println("<tr><td><a href=\"addcart.jsp?id=" + rst.getInt(3) + "&name=" + rst.getString(1)
+							+ "&price=" + rst.getString(2) + " \">Add to cart</a>" + "</td><td>" + rst.getString(1)
+							+ "</td><td>" + rst.getString(2) + "</td></tr>");
 				}
 				out.println("</table>");
 			}
