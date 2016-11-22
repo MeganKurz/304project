@@ -56,7 +56,6 @@ productName  VARCHAR(50) NOT NULL,
 species VARCHAR(50),
 price  DECIMAL (9,2) NOT NULL,
 Inventory  INTEGER,
-picture VARCHAR(50),	
 PRIMARY KEY (productId),
 CONSTRAINT FK_Product_CactiSpecies FOREIGN KEY (species) REFERENCES CactiSpecies (species));
 
@@ -115,17 +114,6 @@ PRIMARY KEY(ghouseId, empId),
 CONSTRAINT FK_WorksAt_Greenhouse FOREIGN KEY (ghouseId) REFERENCES Greenhouse (ghouseId),
 CONSTRAINT FK_WorksAt_Employee FOREIGN KEY (empId) REFERENCES Employee (empId));
 
-CREATE TABLE CactiSpecies (
-species  VARCHAR(50) PRIMARY KEY,
-food  VARCHAR(50) NOT NULL,
-sunLevel  INTEGER CHECK (sunLevel BETWEEN 1 and 10),
-waterLevel  INTEGER CHECK (waterLevel BETWEEN 1 and 10));   
-
-INSERT INTO CactiSpecies VALUES ('Cereus peruvianus', 'garden fertilizer', 3, 5);
-INSERT INTO CactiSpecies VALUES ('Grafted Gymnocalycium Cultivars', 'pro mix health fertilizer', 8, 3);
-INSERT INTO CactiSpecies VALUES ('Echinopsis chamaecereus cultivar', 'garden fertilizer', 7, 6);
-INSERT INTO CactiSpecies VALUES ('Pilosocereus pachycladus', 'starter fertilizer', 10, 7);
-INSERT INTO CactiSpecies VALUES ('Cereus tetragonus', 'garden fertilizer', 6, 8);
 
 INSERT INTO Account VALUES('bobSmith', 'pass', 'Bob Smith', '444 Fake St, Faketown, BC, Canada V1R 7K6','444 Fake St, BC, Canada V1R 7K6','NULL','Admin','bobsmith@fancycacti.com','2505551011')
 INSERT INTO Account VALUES('johnJacob', 'pass', 'John Jacob', '652 Fake Ave, Faketown, BC Canada F5F 6F5','652 Fake Ave, Faketown, BC Canada F5F 6F5','Mastercard','Customer','johnjacob@gmail.com','2506827140')
