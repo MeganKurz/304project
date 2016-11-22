@@ -35,7 +35,7 @@
 </style>
 <body>
 
-	<h1>Order List</h1>
+	<h1><font face = "Sans-Serif">Order List</font></h1>
 
 	<%@ page import="java.sql.*"%>
 	<%
@@ -50,14 +50,14 @@
 			PreparedStatement pstmt = con.prepareStatement(SQL);
 			ResultSet rst = pstmt.executeQuery();
 			out.println(
-					"<table id = 'hor-minimalist-b'><tr><td>Order Id</td><td>Customer Id</td><td>Customer Name</td><td>Total Amount</td></tr>");
+					"<table id = 'hor-minimalist-b'><tbody><th><b>Order Id</b></th><th><b>Customer Id</b></th><th><b>Customer Name</b></th><th><b>Total Amount</b></th>");
 			String oid = null;
 			while (rst.next()) {
 				oid = rst.getString(1);
 				out.println("<tr><td>" + rst.getString(1) + "</td><td>" + rst.getString(2) + "</td><td>"
 						+ rst.getString(3) + "</td><td>" + rst.getString(4) + "</td></tr>");
 				out.println(
-						"<tr align='right'><td colspan='4'><table><tr><td>Product Id</td><td>Quantity</td><td>Price</td></tr>");
+						"<tr align='right'><td colspan='4'><table id = 'hor-minimalist-b'><th><b>Product Id</b></th><th><b>Quantity</b></th><th><b>Price</b></th>");
 				String SQL2 = "select productId, quantity, price from OrderedProduct where orderId=?";
 				PreparedStatement pstmt2 = con.prepareStatement(SQL2);
 				pstmt2.setString(1, oid);
@@ -66,7 +66,7 @@
 					out.println("<tr><td>" + rst2.getString(1) + "</td><td>" + rst2.getString(2) + "</td><td>"
 							+ rst2.getString(3) + "</td></tr>");
 				}
-				out.println("</table></td></tr>");
+				out.println("</tbody></table></td></tr>");
 			}
 			out.println("</table>");
 		} catch (SQLException ex) {
