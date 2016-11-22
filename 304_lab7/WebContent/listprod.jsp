@@ -16,25 +16,6 @@
 			value="Reset"> (Leave blank for all products)
 	</form>
 
-	<%
-		// Get product name to search for
-
-		// Variable name now contains the search string the user entered
-		// Use it to build a query and print out the resultset.  Make sure to use PreparedStatement!
-
-		// Make the connection
-
-		// Print out the ResultSet
-
-		// For each product create a link of the form
-		// addcart.jsp?id=<productId>&name=<productName>&price=<productPrice>
-
-		// Close connection
-
-		// Useful code for formatting currency values:
-		// NumberFormat currFormat = NumberFormat.getCurrencyInstance();
-		// out.println(currFormat.format(5.0);	// Prints $5.00
-	%>
 	<%@ page import="java.sql.*"%>
 	<%
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
