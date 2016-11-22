@@ -20,9 +20,10 @@
 			</ul>
 		</nav>
     </header>
-	<h1 align="center">Sign up for an account with Fancy Cacti!</h1>
+	
 
  <main>
+ <h1 align="center"> Login to your Fancy Cacti account.</h1>
 		<div id="form-main">
 			<div id="form-div">
 				<form class="form" id="form1">
