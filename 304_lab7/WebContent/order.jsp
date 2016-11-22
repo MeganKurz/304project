@@ -60,12 +60,16 @@
 								double pr = Double.parseDouble(price);
 								int qty = ((Integer) product.get(3)).intValue();
 								String s = "INSERT INTO OrderedProduct VALUES(?,?,?,?)";
+								String u = "UPDATE Product SET Inventory = Inventory - ? WHERE productId = ?";
 								PreparedStatement ps = con.prepareStatement(s);
+								PreparedStatement pu = con.prepareStatement(u);
 								ps.setInt(1, orderId);
 								ps.setString(2, productId);
 								ps.setInt(3, qty);
 								ps.setDouble(4, pr);
 								ps.executeUpdate();
+								pu.setInt(1, qty);
+								pu.setString(2, productId);
 								total += qty * pr;
 								out.println("<tr><td>" + productId + "</td><td>" + product.get(1) + "</td><td>"
 										+ qty + "</td><td>" + pr + "</td><td>" + qty * pr + "</td></tr>");
@@ -73,7 +77,7 @@
 
 							out.println("<tr><td colspan='4'><b>Order Total</b></td><td>" + total
 									+ "</td></tr></table>");
-							String upOrd = "UPDATE Orders SET totalAmount = ? WHERE orderId = ?";
+							String upOrd = "UPDATE Orders SET totalAmount = ? WHERE orderId = ?"; 
 							PreparedStatement pord = con.prepareStatement(upOrd);
 							pord.setDouble(1, total);
 							pord.setInt(2, orderId);
