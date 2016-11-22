@@ -1,0 +1,75 @@
+!SESSION 2016-11-21 18:18:21.321 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2016-11-21 18:18:55.434
+!MESSAGE The 'org.eclipse.ui.startup' extension from 'com.objectaid.uml' does not provide a 'class' attribute.
+This usage is deprecated and a 'class' attribute should be provided.
+The release after Mars (4.5) will no longer support the deprecated usage!
+
+!ENTRY org.eclipse.equinox.p2.director 2 10054 2016-11-21 18:19:04.497
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.497
+!MESSAGE Software being installed: artificial_root 1.0.0.v1479781143178
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-21 18:19:04.497
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.497
+!MESSAGE Ant Build Tool Core 3.4.0.v20150428-1928 (org.eclipse.ant.core 3.4.0.v20150428-1928)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.497
+!MESSAGE Ant Build Tool Core 3.4.100.v20160505-0642 (org.eclipse.ant.core 3.4.100.v20160505-0642)
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-21 18:19:04.498
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE From: artificial_root 1.0.0.v1479781143178
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE To: org.eclipse.platform.feature.group [4.5.0,4.6.0)
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-21 18:19:04.498
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE From: artificial_root 1.0.0.v1479781143178
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE To: org.eclipse.platform.feature.group [4.6.0,4.7.0)
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-21 18:19:04.498
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE From: Eclipse Platform 4.5.0.v20150603-2358 (org.eclipse.platform.feature.group 4.5.0.v20150603-2358)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE To: org.eclipse.ant.core [3.4.0.v20150428-1928]
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2016-11-21 18:19:04.498
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE From: Eclipse Platform 4.6.1.v20160907-1200 (org.eclipse.platform.feature.group 4.6.1.v20160907-1200)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2016-11-21 18:19:04.498
+!MESSAGE To: org.eclipse.ant.core [3.4.100.v20160505-0642]
+
+!ENTRY org.eclipse.epp.logging.aeri.ui 1 4 2016-11-21 18:19:06.097
+!MESSAGE The error reporting server is not available. Error reporting will be disabled until next restart. Version: 1.0.0.v20150617-0732
+!STACK 0
+org.eclipse.epp.internal.logging.aeri.ui.l10n.Logs$LogTraceException
+	at org.eclipse.epp.internal.logging.aeri.ui.l10n.Logs$LogTraceException.newTrace(Logs.java:382)
+	at org.eclipse.epp.internal.logging.aeri.ui.l10n.Logs.log(Logs.java:134)
+	at org.eclipse.epp.internal.logging.aeri.ui.l10n.Logs.log(Logs.java:126)
+	at org.eclipse.epp.internal.logging.aeri.ui.log.CheckServerAvailabilityJob.run(CheckServerAvailabilityJob.java:53)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-11-21 18:19:25.741
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Reid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ui 2 18 2016-11-21 18:19:55.674
+!MESSAGE Updating the index from remote failed. Version: 1.0.0.v20150617-0732
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.epp.internal.logging.aeri.ui.log.ProblemsDatabaseUpdateJob.getEtag(ProblemsDatabaseUpdateJob.java:95)
+	at org.eclipse.epp.internal.logging.aeri.ui.log.ProblemsDatabaseUpdateJob.run(ProblemsDatabaseUpdateJob.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.epp.logging.aeri.ui 2 6 2016-11-21 18:19:55.675
+!MESSAGE Failed to determine ETAG for remote problems database. Stopping update. Version: 1.0.0.v20150617-0732
