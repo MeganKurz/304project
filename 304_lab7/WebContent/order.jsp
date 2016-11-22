@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kyla Reid and Megan Kurz Grocery Order Processing</title>
+<title>Fancy Cacti Order Processing</title>
 </head>
 <body>
 	<%@ page import="java.sql.*"%>

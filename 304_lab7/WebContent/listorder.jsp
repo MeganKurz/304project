@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kyla Reid and Megan Kurz Grocery Order List</title>
+<title>Fancy Cacti Order List</title>
 </head>
 <style>
 #hor-minimalist-b {
