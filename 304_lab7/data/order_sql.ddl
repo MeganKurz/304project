@@ -114,3 +114,8 @@ PRIMARY KEY(ghouseId, empId),
 CONSTRAINT FK_WorksAt_Greenhouse FOREIGN KEY (ghouseId) REFERENCES Greenhouse (ghouseId),
 CONSTRAINT FK_WorksAt_Employee FOREIGN KEY (empId) REFERENCES Employee (empId));
 
+
+INSERT INTO Account VALUES('bobSmith', 'pass', 'Bob Smith', '444 Fake St, Faketown, BC, Canada V1R 7K6','444 Fake St, BC, Canada V1R 7K6','NULL','Admin','bobsmith@fancycacti.com','2505551011')
+INSERT INTO Account VALUES('johnJacob', 'pass', 'John Jacob', '652 Fake Ave, Faketown, BC Canada F5F 6F5','652 Fake Ave, Faketown, BC Canada F5F 6F5','Mastercard','Customer','johnjacob@gmail.com','2506827140')
+INSERT INTO Account VALUES('janeDoe', 'pass', 'Jane Doe', '8554 Fake St, Faketown, BC Canada G7T 6F7','8554 Fake St, Faketown, BC Canada G7T 6F7','NULL','Supervisor','janedoe@fancycacti.com','2505551211)
+
